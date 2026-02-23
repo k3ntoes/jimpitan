@@ -1,0 +1,17 @@
+{
+	"name": "Jimpitan Ronda",
+	"short_name": "Jimpitan",
+	"description": "Aplikasi pencatatan iuran jimpitan ronda warga",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#ffffff",
+	"theme_color": "#4f46e5",
+	"orientation": "portrait-primary",
+	"icons": [
+		{
+			"src": "/favicon.ico",
+			"sizes": "any",
+			"type": "image/x-icon"
+		}
+	]
+}

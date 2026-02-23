@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String        @id @default(cuid())
+  name         String
+  username     String        @unique
+  password     String
+  role         String        @default("admin")
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  transactions Transaction[]
+}
+
+model Transaction {
+  id          String   @id @default(cuid())
+  date        DateTime
+  day         String   // Hari: MINGGU, SENIN, etc.
+  type        String   // CREDIT or DEBIT
+  amount      Int      // dalam rupiah (integer)
+  description String?  // Keterangan
+  attended    Boolean  @default(true) // status setor: true=hadir (✓), false=tidak (X)
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
