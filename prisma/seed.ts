@@ -1,9 +1,17 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from "@/generated/prisma/client";
+import { PrismaLibSql } from "@prisma/adapter-libsql";
 import bcrypt from "bcryptjs";
 
-const prisma = new PrismaClient({
-	log: ["error", "warn"],
+
+const adapter = new PrismaLibSql({
+  url: process.env.DATABASE_URL ?? "",
 });
+
+const prisma = new PrismaClient({ adapter });
+
+// const prisma = new PrismaClient({
+// 	log: ["error", "warn"],
+// });
 
 const HARI = ["MINGGU", "SENIN", "SELASA", "RABU", "KAMIS", "JUM'AT", "SABTU"];
 
