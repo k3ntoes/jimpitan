@@ -1,0 +1,22 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: jimpitan-app:latest
+    ports:
+      - "${APP_PORT:-3000}:3000"
+    volumes:
+      - db_data:/app/data
+    env_file:
+      - .env.docker
+    environment:
+      - NODE_ENV=production
+      # Add your environment variables here
+      # - DATABASE_URL=your_database_url
+      # - JWT_SECRET=your_jwt_secret
+    # restart: unless-stopped
+
+volumes:
+  db_data:
+    driver: local
