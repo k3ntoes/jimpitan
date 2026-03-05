@@ -4,12 +4,12 @@ services:
       context: .
       dockerfile: Dockerfile
     image: jimpitan-app:latest
+    env_file:
+      - .env.docker
     ports:
       - "${APP_PORT:-3000}:3000"
     volumes:
       - db_data:/app/data
-    env_file:
-      - .env.docker
     environment:
       - NODE_ENV=production
       # Add your environment variables here
