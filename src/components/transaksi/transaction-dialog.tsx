@@ -102,7 +102,7 @@ export default function TransactionDialog({ open, onOpenChange, transaction, onS
 
 	return (
 		<Dialog open={open} onOpenChange={onOpenChange}>
-			<DialogContent className="bg-white border-gray-200 max-w-md">
+			<DialogContent className="bg-white border-gray-200 max-w-[calc(100vw-2rem)] sm:max-w-md">
 				<DialogHeader>
 					<DialogTitle className="text-gray-900">{isEdit ? "Edit Transaksi" : "Tambah Transaksi"}</DialogTitle>
 				</DialogHeader>
@@ -219,7 +219,7 @@ export default function TransactionDialog({ open, onOpenChange, transaction, onS
 							)}
 						/>
 
-						<DialogFooter className="gap-2">
+						<DialogFooter className="gap-2 flex-col-reverse sm:flex-row">
 							<Button
 								type="button"
 								variant="ghost"

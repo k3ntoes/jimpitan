@@ -3,8 +3,8 @@
 		"source.organizeImports.biome": "explicit",
 		"source.fixAll.biome": "explicit"
 	},
-	"biome.configurationPath": "./biome.json",
-	"biome.lsp.bin": "./node_modules/.bin/biome",
+	"biome.configurationPath": "${WORKSPACE_FOLDER}/biome.json",
+	"biome.lsp.bin": "${WORKSPACE_FOLDER}/node_modules/.bin/biome",
 	"editor.defaultFormatter": "biomejs.biome",
 	"[typescript]": {
 		"editor.defaultFormatter": "biomejs.biome"

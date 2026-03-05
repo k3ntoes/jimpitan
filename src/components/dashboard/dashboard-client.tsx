@@ -130,7 +130,7 @@ export default function DashboardClient() {
 			{/* Header Section */}
 			<div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-linear-to-r from-blue-50 to-indigo-50 p-6 rounded-2xl border border-gray-200 shadow-sm">
 				<div>
-					<h2 className="text-3xl font-bold text-gray-900 tracking-tight">Dashboard Admin</h2>
+					<h2 className="text-xl sm:text-3xl font-bold text-gray-900 tracking-tight">Dashboard Admin</h2>
 					<p className="text-gray-600 text-sm mt-1">
 						Selamat datang kembali! Berikut ringkasan aktivitas keuangan Jimpitan Ronda.
 					</p>
@@ -189,7 +189,7 @@ export default function DashboardClient() {
 									{isLoading ? (
 										<Skeleton className="h-8 w-32 bg-gray-200 rounded-md" />
 									) : (
-										<p className="text-2xl font-bold text-gray-900 tracking-tight">
+										<p className="text-lg sm:text-2xl font-bold text-gray-900 tracking-tight">
 											{stat.isCount ? stat.value.toLocaleString("id-ID") : formatCurrency(stat.value)}
 										</p>
 									)}
@@ -217,7 +217,7 @@ export default function DashboardClient() {
 								</CardDescription>
 							</div>
 						</CardHeader>
-						<CardContent className="pt-6 px-2 sm:px-6">
+						<CardContent className="pt-6 px-3 sm:px-6">
 							{isLoading ? (
 								<div className="h-75 flex items-center justify-center text-gray-500">
 									<div className="flex flex-col items-center gap-2">

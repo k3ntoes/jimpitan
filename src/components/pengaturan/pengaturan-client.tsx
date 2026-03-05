@@ -62,7 +62,7 @@ export default function PengaturanClient() {
 	return (
 		<div className="space-y-6">
 			<div>
-				<h2 className="text-3xl font-bold tracking-tight">Pengaturan</h2>
+				<h2 className="text-xl sm:text-3xl font-bold tracking-tight">Pengaturan</h2>
 				<p className="text-muted-foreground">Kelola akun dan preferensi Anda</p>
 			</div>
 
