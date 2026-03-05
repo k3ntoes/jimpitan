@@ -34,6 +34,12 @@ COPY . .
 
 ENV NODE_ENV=production
 
+# Prisma config requires DATABASE_URL at load time; provide a safe default for build.
+# This is only used in the builder stage (the runtime image still expects DATABASE_URL
+# to be provided via environment variables / compose).
+ARG DATABASE_URL="file:./data/jimpitan.db"
+ENV DATABASE_URL=$DATABASE_URL
+
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
