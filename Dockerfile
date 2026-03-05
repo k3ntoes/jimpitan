@@ -82,6 +82,7 @@ RUN chown bun:bun .next
 COPY --from=builder --chown=bun:bun /app/.next/standalone ./
 COPY --from=builder --chown=bun:bun /app/data ./data
 COPY --from=builder --chown=bun:bun /app/prisma ./prisma
+COPY --from=builder --chown=bun:bun /app/prisma.config.ts ./prisma.config.ts
 COPY --from=builder --chown=bun:bun /app/.next/static ./.next/static
 
 # If you want to persist the fetch cache generated during the build so that
